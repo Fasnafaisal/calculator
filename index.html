@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(255, 210, 155);">
+    <h1 style="text-align: center; color: whitesmoke; background-color: blueviolet;"><i>CALCULATOR</i></h1><br><br>
+    <div style="text-align: center;">
+        <input type="text" id="display" ><br>
+        <button style="color: rgb(0, 255, 255);" onclick="clearDisplay()">C</button>
+        <button style="color: rgb(0, 255, 255);" onclick="appendToDisplay('%')">%</button>
+        <button style="color: rgb(0, 255, 255);" onclick="clearValue()">x</button>
+        <button style="color: rgb(0, 255, 255);" onclick="appendToDisplay('/')">/</button>
+        <br>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button style="color: rgb(0, 255, 255);" onclick="appendToDisplay('*')">*</button>
+        <br>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button style="color: rgb(0, 255, 255);" onclick="appendToDisplay('-')">-</button>
+        <br>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button style="color: rgb(0, 255, 255);" onclick="appendToDisplay('+')">+</button>
+        <br>
+        <button onclick="appendToDisplay('00')">00</button>
+        <button onclick="appendToDisplay('0')">0</button>
+        <button onclick="appendToDisplay('.')">.</button>
+        <button style="color: rgb(0, 255, 255);" onclick="calculateResult()">=</button>
+        
+    </div>
+    <script>
+
+
+
+        function appendToDisplay(value) {
+            document.getElementById("display").value += value;            
+        }
+        function clearDisplay(){
+            document.getElementById("display").value = ''; 
+        }
+        function clearValue(){
+            let v=document.getElementById("display").value  
+            let b=v.slice(0,-1)
+            document.getElementById("display").value = b; 
+
+            
+        }
+        function calculateResult(){
+            let percentage = eval(document.getElementById("display").value)
+            const result = eval(document.getElementById("display").value);
+            document.getElementById("display").value = result; 
+        }
+      
+    </script>
+
+</body>
+</html>
+<style>
+    input{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        height: 40px;
+        width: 300px;
+    }
+    button{
+        width: 70px;
+        height: 50px;
+        color: white;
+        background-color: black;
+
+    }
+    button:hover{
+        background-color: blueviolet;
+    }
+    div{
+        margin: 400px;
+        margin-top: 10px;
+        background-color: black;
+        padding: 40px;
+    }
+</style>
